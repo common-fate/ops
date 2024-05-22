@@ -1,0 +1,87 @@
+
+[TestServiceDefsSnapshot - 1]
+{
+ "services": [
+  {
+   "cliName": "",
+   "description": "My Example service",
+   "id": "example",
+   "name": "Example",
+   "operations": [
+    {
+     "cliName": "",
+     "description": "",
+     "id": "Bar",
+     "name": "",
+     "requestBody": {
+      "schema": {
+       "$defs": {
+        "fooInput": {
+         "additionalProperties": false,
+         "properties": {
+          "bar": {
+           "type": "string"
+          },
+          "other": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "bar"
+         ],
+         "type": "object"
+        }
+       },
+       "$id": "https://github.com/common-fate/ops/foo-input",
+       "$ref": "#/$defs/fooInput",
+       "$schema": "https://json-schema.org/draft/2020-12/schema"
+      }
+     },
+     "responses": null,
+     "routingRule": {
+      "method": "",
+      "path": "",
+      "type": ""
+     }
+    },
+    {
+     "cliName": "",
+     "description": "does foo",
+     "id": "Foo",
+     "name": "",
+     "requestBody": {
+      "schema": {
+       "$defs": {
+        "fooInput": {
+         "additionalProperties": false,
+         "properties": {
+          "bar": {
+           "type": "string"
+          },
+          "other": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "bar"
+         ],
+         "type": "object"
+        }
+       },
+       "$id": "https://github.com/common-fate/ops/foo-input",
+       "$ref": "#/$defs/fooInput",
+       "$schema": "https://json-schema.org/draft/2020-12/schema"
+      }
+     },
+     "responses": null,
+     "routingRule": {
+      "method": "",
+      "path": "",
+      "type": ""
+     }
+    }
+   ]
+  }
+ ]
+}
+---
