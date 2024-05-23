@@ -308,6 +308,15 @@ func (r *Registry) Start(ctx context.Context, opts StartOpts) error {
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" && r.URL.Path == "/.lightwave/operations" {
+		err := json.NewEncoder(w).Encode(h.defs)
+		if err != nil {
+			slog.Error("error marshalling operations", "error", err)
+			_, _ = w.Write([]byte(err.Error()))
+		}
+		return
+	}
+
 	if r.Method != "POST" {
 		// POST-only protocol
 		w.WriteHeader(http.StatusMethodNotAllowed)
